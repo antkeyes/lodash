@@ -84,6 +84,15 @@ let _ = {
         // }
         // return newArr;
     },
+    chunk(arr, size = 1) {
+        let chunks = [];
+        for (let i = 0; i < arr.length; i += size) {
+            let arrChunk = arr.slice(i, i+size);
+            chunks.push(arrChunk);
+            arrChunk = [];
+        }
+        return chunks;
+    },
 };
 
 
