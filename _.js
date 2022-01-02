@@ -24,7 +24,17 @@ let _ = {
     },
     words(string) {
         return string.split(' ');
-    }
+    },
+    pad(str, len) {
+        if (len <= str.length) {
+            return str;
+        } else {
+            let startPaddingLength = Math.floor((len - str.length) / 2);
+            let endPaddingLength = len - str.length - startPaddingLength; 
+            let paddedString = ' '.repeat(startPaddingLength) + str + ' '.repeat(endPaddingLength);
+            return paddedString;
+        }
+    },
 };
 
 
