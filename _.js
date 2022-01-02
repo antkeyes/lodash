@@ -67,6 +67,23 @@ let _ = {
         }
         return newArr;
     },
+    dropWhile(arr, predicate) {
+        let dropNumber = arr.findIndex((element, index) => {
+            return !predicate(element, index, arr)});
+        let newArr = this.drop(arr, dropNumber);
+        return newArr;
+        // let newArr = [];
+        // let counter = 0;
+        // for (let i = 0; i <= arr.length; i++) {
+        //     if (predicate(arr[i], i, arr) == undefined) {
+        //         counter = i;
+        //     }
+        // }
+        // for (let i = counter; i < arr.length; i++) {
+        //     newArr.push(arr[i]);
+        // }
+        // return newArr;
+    },
 };
 
 
