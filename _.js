@@ -35,6 +35,13 @@ let _ = {
             return paddedString;
         }
     },
+    has(obj, key) {
+        if (obj[key] == undefined) {
+            return false;
+        } else {
+            return true;
+        }
+    },
 };
 
 
