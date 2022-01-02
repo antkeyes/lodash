@@ -42,6 +42,31 @@ let _ = {
             return true;
         }
     },
+    invert(obj) {
+        let invertedObj = {}
+        for (key in obj) {
+            let originalValue = obj[key];
+            invertedObj[originalValue] = key;
+            
+        }
+        return invertedObj;
+    },
+    findKey(object, predicate) {
+        for (key in object) {
+            let value = object[key];
+            let predicateReturnedValue = predicate(value);
+            if (predicateReturnedValue == true) {
+                return key;
+            }
+        }
+    },
+    drop(arr, num = 1) {
+        let newArr = [];
+        for (let i = num; i < arr.length; i++) {
+            newArr.push(arr[i]);
+        }
+        return newArr;
+    },
 };
 
 
